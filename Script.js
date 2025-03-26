@@ -3,7 +3,7 @@ document.getElementById("balance").innerText = balance;
 
 function spinWheel() {
     const wheel = document.getElementById("wheel");
-    let randomDegree = Math.floor(360 * 5 + Math.random() * 360);
+    let randomDegree = Math.floor(360 * 5 + Math.random() * 360); // Spins multiple times
     wheel.style.transform = `rotate(${randomDegree}deg)`;
 
     setTimeout(() => {
