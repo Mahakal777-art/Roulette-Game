@@ -3,23 +3,23 @@ document.getElementById("balance").innerText = balance;
 
 function spinWheel() {
     const wheel = document.getElementById("wheel");
-    let randomDegree = Math.floor(360 * 5 + Math.random() * 360); // Spin multiple times
+    let randomDegree = Math.floor(360 * 5 + Math.random() * 360);
     wheel.style.transform = `rotate(${randomDegree}deg)`;
 
     setTimeout(() => {
         let finalPosition = randomDegree % 360;
         let result = finalPosition < 180 ? "red" : "black";
         checkWin(result);
-    }, 3000); // Wait for spin to finish
+    }, 3000);
 }
 
 function placeBet(choice) {
-    let betAmount = parseInt(document.getElementById("betAmount").value);
+    let betAmount = parseInt(document.getElementById("betAmount").value) || 100;
     if (betAmount > balance || betAmount <= 0) {
         alert("Invalid bet amount");
         return;
     }
-    
+
     document.getElementById("result").innerText = "Spinning...";
     setTimeout(() => {
         spinWheel();
@@ -32,12 +32,17 @@ function checkWin(result) {
     let choice = localStorage.getItem("betChoice");
     let betAmount = parseInt(localStorage.getItem("betAmount"));
 
-    if (result === choice) {
+    let winCondition = false;
+
+    if (choice === "red" && result === "red") winCondition = true;
+    if (choice === "black" && result === "black") winCondition = true;
+
+    if (winCondition) {
         balance += betAmount;
-        document.getElementById("result").innerText = `You won! 🎉 (${result.toUpperCase()})`;
+        document.getElementById("result").innerText = `🎉 You won! (${result.toUpperCase()})`;
     } else {
         balance -= betAmount;
-        document.getElementById("result").innerText = `You lost! 😢 (${result.toUpperCase()})`;
+        document.getElementById("result").innerText = `😢 You lost! (${result.toUpperCase()})`;
     }
 
     document.getElementById("balance").innerText = balance;
