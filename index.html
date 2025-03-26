@@ -7,18 +7,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Roulette Game</h1>
+    <h1>Roulette Game 🎰</h1>
+    
     <div class="roulette-container">
-        <div id="wheel" class="roulette-wheel"></div>
+        <div id="wheel" class="roulette-wheel">
+            <div class="ball"></div>
+        </div>
         <button onclick="spinWheel()">Spin</button>
     </div>
+
     <div class="controls">
         <p>Balance: ₹<span id="balance">1000</span></p>
         <input type="number" id="betAmount" placeholder="Enter bet amount">
-        <button onclick="placeBet('red')">Bet on Red</button>
-        <button onclick="placeBet('black')">Bet on Black</button>
+        <button onclick="placeBet('red')">Bet on Red 🔴</button>
+        <button onclick="placeBet('black')">Bet on Black ⚫</button>
     </div>
+
     <p id="result"></p>
+
     <script src="script.js"></script>
 </body>
 </html>
