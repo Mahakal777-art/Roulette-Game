@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roulette Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Roulette Game</h1>
+    <div class="roulette-container">
+        <div id="wheel" class="roulette-wheel"></div>
+        <button onclick="spinWheel()">Spin</button>
+    </div>
+    <div class="controls">
+        <p>Balance: ₹<span id="balance">1000</span></p>
+        <input type="number" id="betAmount" placeholder="Enter bet amount">
+        <button onclick="placeBet('red')">Bet on Red</button>
+        <button onclick="placeBet('black')">Bet on Black</button>
+    </div>
+    <p id="result"></p>
+    <script src="script.js"></script>
+</body>
+</html>
