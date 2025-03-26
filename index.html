@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roulette Game</title>
+    <title>Casino Roulette Game</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>🎰 Advanced Roulette Game</h1>
+    <h1>🎰 Casino Roulette Game</h1>
 
-    <div class="game-container">
+    <div class="casino-container">
         <!-- Roulette Wheel -->
         <div class="wheel-container">
             <div id="wheel" class="roulette-wheel">
@@ -20,16 +20,15 @@
 
         <!-- Betting Table -->
         <div class="betting-table">
-            <div class="bet-row">
+            <p>Place Your Bets</p>
+            <div class="bet-options">
                 <button class="bet-btn red" onclick="placeBet('red')">🔴 Red</button>
                 <button class="bet-btn black" onclick="placeBet('black')">⚫ Black</button>
-            </div>
-            <div class="bet-row">
                 <button class="bet-btn" onclick="placeBet('odd')">Odd</button>
                 <button class="bet-btn" onclick="placeBet('even')">Even</button>
             </div>
-            <div class="bet-row">
-                <input type="number" id="betAmount" placeholder="Enter bet">
+            <div class="bet-input">
+                <input type="number" id="betAmount" placeholder="Enter bet amount">
                 <button onclick="placeBet('number')">Bet on Number</button>
             </div>
         </div>
